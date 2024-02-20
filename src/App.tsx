@@ -1,4 +1,4 @@
-
+import Index from "./components/Index";
 
 
 
@@ -6,7 +6,7 @@ const App = () => {
 
   return (
     <div>
-      <p>Trust and Obey</p>
+      <Index />
     </div>
   )
 }

@@ -1,11 +1,12 @@
-import React from 'react';
-import {User} from ".";
+import { useUserContext } from "./useContext/Context";
 
-interface SeidebarProps {
-    user: User;
-}
 
-const Sidebar = ({user}: SeidebarProps) => {
+// interface SeidebarProps {
+//     user: User;
+// }
+
+const Sidebar = () => {
+    const user = useUserContext();
   return (
     <div>
         <div>{user.name}</div>

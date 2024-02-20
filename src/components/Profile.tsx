@@ -1,11 +1,18 @@
-import React from 'react';
-import {User} from ".";
+import { useEffect } from "react";
+import { useUserContext } from "./useContext/Context";
 
-interface ProfileProps {
-    user: User;
-}
+// interface ProfileProps {
+//     user: User;
+// }
 
-const Profile = ({user}: ProfileProps) => {
+const Profile = () => {
+    const user = useUserContext();
+    
+
+    useEffect(() => {
+        console.log(user.name)
+    },[])
+    
   return (
     <div>
         <div>{user.name}</div>

@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import { Dashboard } from './Dashboard';
+import { DashboardContext } from './useContext/Context';
 
 
 export interface User   {
@@ -7,21 +8,24 @@ export interface User   {
     name: string;
 }
 
-interface DemoProps {}
+// interface DemoProps {}
 
-const Index = ({}: DemoProps) => {
+const Index = () => {
 
 
     const [user] = useState<User>({
         isSubscribed: true,
-        name: "You"
+        name: "You",
     });
 
 
 
   return (
     <div>
-        <Dashboard user={user} />
+        <DashboardContext.Provider value={user}>
+        <Dashboard />
+        {/* <p>Massive</p> */}
+        </DashboardContext.Provider>
     </div>
   )
 }
